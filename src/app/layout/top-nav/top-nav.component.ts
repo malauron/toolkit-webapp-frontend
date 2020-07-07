@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SideNavService } from '../../services/side-nav.service';
 
 @Component({
   selector: 'app-top-nav',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TopNavComponent implements OnInit {
 
-  constructor() { }
+  constructor(public sideNavService: SideNavService) { }
 
   ngOnInit(): void {
   }
