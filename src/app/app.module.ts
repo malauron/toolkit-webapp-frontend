@@ -6,6 +6,7 @@ import { SideNavComponent } from './layout/side-nav/side-nav.component';
 import { TopNavComponent } from './layout/top-nav/top-nav.component';
 import { ItemFormComponent } from './pages/item-form/item-form.component';
 import { ItemCategoryFormComponent } from './pages/item-category-form/item-category-form.component';
+import { IconsModule } from './icons/icons.module';
 import { AppRoutingModule } from './/app-routing.module';
 
 @NgModule({
@@ -18,6 +19,7 @@ import { AppRoutingModule } from './/app-routing.module';
   ],
   imports: [
     BrowserModule,
+    IconsModule,
     AppRoutingModule
   ],
   providers: [],
