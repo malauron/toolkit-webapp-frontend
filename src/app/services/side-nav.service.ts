@@ -1,14 +1,28 @@
 import { Injectable } from '@angular/core';
+import { Subject } from 'rxjs';
 
-@Injectable({
-  providedIn: 'root'
-})
+const _expand$ = new Subject<string[]>();
+
+const expandedTable: {
+    [index: string]: boolean;
+} = {};
+
+@Injectable()
 export class SideNavService {
-  hideSideNav: boolean = false;
+    constructor() {}
 
-  constructor() { }
+    get expand$() {
+        return _expand$;
+    }
 
-  toggleSideNav(): void {
-    this.hideSideNav = !this.hideSideNav;
-  }
+    isExpanded(hash: string): boolean {
+        if (expandedTable[hash]) {
+            return true;
+        }
+        return false;
+    }
+
+    setExpanded(hash: string, expanded: boolean) {
+        expandedTable[hash] = expanded;
+    }
 }
